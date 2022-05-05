@@ -84,9 +84,17 @@ git push origin hotfix/1.0.1
 等待远程 github 仓库对这个 hotfix 分支的 Pull Requests 审核通过  
 然后在 github -> Releases -> Create a new release ，选择对应的 tag 版本进行创建
 ```bash
-git checkout main #再次同步 main 分支的 tags
+git flow hotfix finish '1.0.1' #结束这个修复分支
+git checkout main #再次回到 main 分支同步远程仓库的 tags
 git fetch origin
+git push --tags
 ```
+一切结束后，回到 develop 分支继续其他功能的开发  
+```bash
+git checkout develop
+git pull
+```
+
 
 
 
